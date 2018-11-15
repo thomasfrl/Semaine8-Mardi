@@ -5,19 +5,19 @@
     <%= link_to "Sandbox App", root_path, class: "navbar-brand" %>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item">
-        <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
-      </li>
+
       <% unless user_signed_in? %>
       <li class="nav-item">
         <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
       </li>
       <% else %>
       <li class="nav-item">
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
       </li>
       <% end %>
-
     </ul>
   </div>
 </nav>

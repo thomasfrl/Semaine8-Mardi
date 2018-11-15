@@ -38,6 +38,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 #lazy user creation
 gem 'devise'
+gem 'pry-byebug'
 
 #Front end gem
 gem "font-awesome-rails"

@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2018_11_15_110123) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
-    t.boolean "status"
+    t.boolean "status", default: false
     t.datetime "deadline"
   end
 
