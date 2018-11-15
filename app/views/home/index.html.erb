@@ -6,6 +6,7 @@
 <ul>
   <% category.tasks.each do |task|  %>
   <li><%= task.title  %>, to read: <%= task.deadline.strftime('%D')  %></li>
+  <%= image_tag task.image %>
   <% end %>
 </ul>
 <% end %>
