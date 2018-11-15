@@ -6,6 +6,7 @@ class CreateTasks < ActiveRecord::Migration[5.2]
       t.string :title
       t.boolean :status, default: false
       t.datetime :deadline
+      t.belongs_to :category, index: true
     end
   end
 end
