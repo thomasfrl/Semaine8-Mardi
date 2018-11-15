@@ -1,6 +1,6 @@
 <%= form_tag(tasks_path, method: "post") do %>
   <div class="form-group">
-      <%= label_tag("Add a new task:") %>
+      <%= label_tag("Your task:") %>
       <%= text_field_tag(:title) %>
   </div>
 
@@ -8,5 +8,5 @@
     <%= label_tag("When is it due for ?") %>
     <%= date_field_tag(:deadline)  %>
   </div>
-    <%= submit_tag("Create task") %>
+    <%= submit_tag("Create task", class: "btn btn-info") %>
 <% end %>

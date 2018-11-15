@@ -22,6 +22,8 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     @task.update(task_params)
+    redirect_to tasks_path
+    flash[:notice] = "Task edited"
   end
 
   def index
