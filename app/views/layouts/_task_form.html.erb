@@ -8,5 +8,9 @@
     <%= label_tag("When is it due for ?") %>
     <%= date_field_tag(:deadline)  %>
   </div>
+  <div class="form-group">
+    <%= label_tag("Category") %>
+    <%= select_tag "Category", options_from_collection_for_select(@categories, "id", "title", "1")  %>
+  </div>
     <%= submit_tag("Create task", class: "btn btn-info") %>
 <% end %>

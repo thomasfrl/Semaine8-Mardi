@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
 before_action :authenticate_user!
   def new
+    @categories = Category.all
   end
 
   def create
@@ -17,6 +18,8 @@ before_action :authenticate_user!
 
   def edit
     @task = Task.find(params[:id])
+    @categories = Category.all
+
   end
 
   def update
