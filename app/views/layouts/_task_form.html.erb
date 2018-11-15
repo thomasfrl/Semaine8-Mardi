@@ -1,9 +1,8 @@
 
 <div class="container">
-<h1 class=" mb-4">Welcome to my todolist app</h1>
 
   <div class="row ml-3">
-      <div class="col-md-6 offset-right-3 offset-left-3">
+      <div class="offset-md-3 col-md-6 offset-md-3">
           <%= form_tag(tasks_path, method: "post", class: "form", id: "contact-form")  do %>
               <div class="form-group">
                   <%= label_tag "Task", nil, class: "form-label" %>
