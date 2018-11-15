@@ -5,8 +5,15 @@
   <div class="card">
     <ul>
       <% category.tasks.each do |task|  %>
-      <li><%= task.title  %>, to read: <%= task.deadline.strftime('%D')  %></li>
-      <%= image_tag task.image, class: "rounded-circle" %>
+      <li>
+        <%= task.title  %>
+        <% unless task.deadline.nil? %>
+          , to read: <%= task.deadline.strftime('%D')  %>
+        <% end %>
+      </li>
+        <% unless task.image.nil? %>
+          <%= image_tag task.image, class: "rounded-circle" %>
+        <% end %>
       <% end %>
     </ul>
   </div>

@@ -6,7 +6,8 @@ before_action :authenticate_user!
 
   def create
     @task = Task.new(task_params)
-
+    @category = Category.find(category_params)
+    @task.category = @category
     if @task.save
       redirect_to root_path
       flash[:notice] = "Task created"
@@ -44,6 +45,10 @@ before_action :authenticate_user!
 
   def task_params
     params.permit(:title, :deadline, :description)
+  end
+
+  def category_params
+    params.require(:Category)
   end
 
 end
