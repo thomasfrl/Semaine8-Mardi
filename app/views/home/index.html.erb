@@ -1,9 +1,17 @@
 <h1 class="text-center">Welcome to my todolist app</h1>
 
+<ul>
+<% @categories.each do  |category|%>
+<li><%= category.title  %></li>
+<ul>
+  <% category.tasks.each do |task|  %>
+  <li><%= task.title  %>, to read: <%= task.deadline.strftime('%D')  %></li>
+  <% end %>
+</ul>
+<% end %>
+</ul>
+
 <% if user_signed_in? %>
-
   <%= render 'layouts/task_form'  %>
-  <%= render 'tasks/task_list'  %>
-
 <% end %>
 
