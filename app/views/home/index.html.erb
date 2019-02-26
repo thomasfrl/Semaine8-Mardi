@@ -1,11 +1,23 @@
 <h1 class="text-center mb-4">Welcome to my todolist app</h1>
 <%= render 'layouts/task_form'  %>
 <div class="container">
+
+  <div class="tab">
+    <% @categories.each do |category| %>
+      <button class="tablinks"><%= category.title %></button>
+    <% end %>
+  </div>
+
   <ul>
-  <% @categories.each do  |category|%>
-  <li><%= category.title  %></li>
-  <div class="card">
-    <ul>
+  <% @categories.each_with_index do  |category,i|%>
+  
+  <% if i == 0  %>
+    <div class="cardtab">
+  <% else %>
+    <div class="cardtab collapse">
+  <% end %>
+  
+    <ul >
       <% category.tasks.each do |task|  %>
       <li>
         <%= task.title  %>
@@ -31,3 +43,5 @@
     <% end %>
   </div>
 </div>
+
+<%= render 'modales/sign_in' %>
