@@ -1,0 +1,4 @@
+$('#email_content').empty();
+$('#email_content').append("<%= j render 'email', task: @email %>");
+$("#email_<%=@email.id%> span").removeClass();
+

@@ -16,4 +16,8 @@ require 'faker'
     my_task.category = my_category
     my_task.save
   end
+
+10.times do
+  email = Email.create!(object: Faker::Book.title, body: Faker::ChuckNorris.fact)
+end
 end

@@ -1,0 +1,26 @@
+<h1>Emails#index</h1>
+<p>Find me in app/views/emails/index.html.erb</p>
+<div class="container">
+    <div class="row">
+        <div class="col-6" id="email_list">
+            <ul>
+                <%@emails.each do |email| %>
+                    <li id="email_<%=email.id%>"> 
+                        <%= link_to( email, {remote: true})   do%>
+                            <% if email.read == false %>
+                                <span class="font-weight-bold">
+                            <% else %>
+                                <span>                              
+                            <% end %> 
+                                <%= email.object %>
+                            </span>
+                        <% end %>
+                    </li>
+                <%end%> 
+            </ul> 
+        </div>
+        <div class="col-6" id="email_content">
+            <h1>blblbalbl</h1>
+        </div>
+    </div>
+</div>
