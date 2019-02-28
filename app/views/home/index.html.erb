@@ -8,7 +8,7 @@
     <% end %>
   </div>
 
-  <ul>
+  <ul id='lists'>
   <% @categories.each_with_index do  |category,i|%>
   
   <% if i == 0  %>
@@ -19,11 +19,17 @@
   
     <ul >
       <% category.tasks.each do |task|  %>
-      <li>
+      <% if task.status == true %>
+        <li class="text-success" id="task_<%=task.id%>">
+      <% else %>
+          <li id="task_<%=task.id%>">
+      <% end %>
         <%= task.title  %>
         <% unless task.deadline.nil? %>
           , to read: <%= task.deadline.strftime('%D')  %>
         <% end %>
+
+        <%= check_box_tag dom_id(task), nil, task.status, :class => 'checkbox' %>
       </li>
       <% end %>
     </ul>
@@ -32,8 +38,7 @@
   </ul>
 </div>
 
-<div class="container">
-  <div class="row">
+<div class="overflow-hidden d-flex">
     <% @tasks.each do |task|  %>
       <div class="card col-3">
         <% unless task.image.nil? %>
@@ -41,7 +46,6 @@
         <% end %>
       </div>
     <% end %>
-  </div>
 </div>
 
 <%= render 'modales/sign_in' %>

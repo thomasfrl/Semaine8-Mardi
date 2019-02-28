@@ -1,0 +1,3 @@
+document.getElementById("lists")
+    .getElementsByClassName('cardtab')[<%= @task.category.id - 1 %>].getElementsByTagName('ul')[0]
+    .insertAdjacentHTML("beforeend", "<%= j render 'task', task: @task %>")

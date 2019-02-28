@@ -38,4 +38,17 @@ $(document).ready(function() {
   $("#hamburgerMenu .nav-item").focusout(function() {
     $("#sign_in").toggleClass("collapse");
   });
+
+  console.log($(".checkbox"));
+  $(".checkbox").bind("change", function() {
+    console.log("cocou");
+    var bool = this.checked ? true : false;
+    var regex = /task_/;
+    $.ajax({
+      url: "/tasks/" + this.id.replace(regex, ""),
+      type: "PUT",
+      data: { status: bool },
+      dataType: "script"
+    });
+  });
 });
